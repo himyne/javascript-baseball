@@ -4,6 +4,7 @@ const makeComputerNumber = require("./ComputerNumberGenerator");
 
 class BaseballGame {
   #computerNumber;
+  #userNumber;
 
   constructor() {
     this.#computerNumber = makeComputerNumber();
@@ -12,26 +13,27 @@ class BaseballGame {
 
   handleUserInput() {
     InputView.readUserNumber((number) => {
-      this.compareComputerAndUser(number);
+      this.#userNumber = number;
+      this.compareComputerAndUser();
     });
   }
 
-  compareComputerAndUser(number) {
-    const strike = this.countStrike(number);
-    const ball = this.countBall(number);
+  compareComputerAndUser() {
+    OutputView.printResult(this.countBall(), this.countStrike());
+    
   }
 
-  countStrike(number) {
+  countStrike() {
     return this.#computerNumber.filter(
-      (computerNumber, index) => computerNumber === number[index]
+      (computerNumber, index) => computerNumber === this.#userNumber[index]
     ).length;
   }
 
-  countBall(number) {
-    return this.#computerNumber.filter(
-      (computerNumber, index) =>
-        this.#computerNumber.includes(number) ||
-        computerNumber !== number[index]
+  countBall() {
+    return this.#userNumber.filter(
+      (userNumber, index) =>
+        this.#computerNumber.includes(userNumber) &&
+        userNumber !== this.#computerNumber[index]
     ).length;
   }
 }
