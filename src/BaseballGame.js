@@ -40,6 +40,10 @@ class BaseballGame {
 
   success() {
     OutputView.printSuccessMessage();
+    this.retryOrDone();
+  }
+  
+  retryOrDone() {
     InputView.readRestartOrDone((input) => {
       if (input === 1) {
         this.#computerNumber = makeComputerNumber();

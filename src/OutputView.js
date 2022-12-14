@@ -14,7 +14,7 @@ const OutputView = {
   },
 
   printResult(ball, strike) {
-    if(!ball || !strike) Console.print(OUTPUT_MESSAGE.nothing)
+    if(!ball && !strike) Console.print(OUTPUT_MESSAGE.nothing)
     Console.print(
       `${ball ? ball + OUTPUT_MESSAGE.ball : OUTPUT_MESSAGE.null} ${
         strike ? strike + OUTPUT_MESSAGE.strike : OUTPUT_MESSAGE.null
