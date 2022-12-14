@@ -3,8 +3,10 @@ const InputView = require('./InputView');
 const makeComputerNumber = require('./ComputerNumberGenerator');
 
 class BaseballGame {
+  #computerNumber;
+
   constructor() {
-    this.computerNumber = makeComputerNumber();
+    this.#computerNumber = makeComputerNumber();
   }
 
   startGame() {
@@ -17,6 +19,7 @@ class BaseballGame {
       
     })
   }
+
 }
 
 module.exports = BaseballGame;
