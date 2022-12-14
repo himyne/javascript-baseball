@@ -8,7 +8,6 @@ class BaseballGame {
 
   constructor() {
     this.#computerNumber = makeComputerNumber();
-    console.log(this.#computerNumber);
   }
 
   handleUserInput() {
@@ -20,7 +19,7 @@ class BaseballGame {
 
   compareComputerAndUser() {
     OutputView.printResult(this.countBall(), this.countStrike());
-    if(this.countStrike() === 3) {
+    if (this.countStrike() === 3) {
       this.success();
     }
   }
@@ -40,7 +39,14 @@ class BaseballGame {
   }
 
   success() {
-    OutputView.printSuccessMessage()
+    OutputView.printSuccessMessage();
+    InputView.readRestartOrDone((input) => {
+      if (input === "1") {
+        this.#computerNumber = makeComputerNumber();
+        return this.handleUserInput();
+      }
+      return OutputView.closeGame();
+    });
   }
 }
 

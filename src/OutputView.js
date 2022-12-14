@@ -23,6 +23,10 @@ const OutputView = {
   printSuccessMessage() {
     Console.print(OUTPUT_MESSAGE.success);
   },
+
+  closeGame() {
+    Console.close();
+  }
 };
 
 module.exports = OutputView;
