@@ -1,11 +1,17 @@
 const OutputView = require('./OutputView');
+const InputView = require('./InputView');
 
 class BaseballGame {
-  constructor() {
-    
-  }
+  
   startGame() {
     OutputView.printStartGame();
+    this.handleUserInput();
+  }
+
+  handleUserInput() {
+    InputView.readUserNumber((number) => {
+      console.log(number)
+    })
   }
 }
 
