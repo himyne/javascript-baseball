@@ -4,6 +4,7 @@ const OUTPUT_MESSAGE = Object.freeze({
   strike: "스트라이크",
   ball: "볼",
   null: "",
+  success: "3개의 숫자를 모두 맞히셨습니다! 게임 종료",
 });
 
 const OutputView = {
@@ -17,6 +18,10 @@ const OutputView = {
         strike ? strike + OUTPUT_MESSAGE.strike : OUTPUT_MESSAGE
       }`.trim()
     );
+  },
+
+  printSuccessMessage() {
+    Console.print(OUTPUT_MESSAGE.success);
   },
 };
 

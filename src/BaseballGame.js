@@ -20,7 +20,9 @@ class BaseballGame {
 
   compareComputerAndUser() {
     OutputView.printResult(this.countBall(), this.countStrike());
-    
+    if(this.countStrike() === 3) {
+      this.success();
+    }
   }
 
   countStrike() {
@@ -35,6 +37,10 @@ class BaseballGame {
         this.#computerNumber.includes(userNumber) &&
         userNumber !== this.#computerNumber[index]
     ).length;
+  }
+
+  success() {
+    OutputView.printSuccessMessage()
   }
 }
 
