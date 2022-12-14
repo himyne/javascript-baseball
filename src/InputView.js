@@ -8,7 +8,7 @@ const INPUT_QUERY = Object.freeze({
 const InputView = {
   readUserNumber(readLineCallback) {
     Console.readLine(INPUT_QUERY.ask_user_number, (number) => {
-      Validation.checkUserNumber(number);
+      number = Validation.checkUserNumber(number);
       readLineCallback(number);
     });
   },

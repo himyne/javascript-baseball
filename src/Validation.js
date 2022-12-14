@@ -12,6 +12,8 @@ const Validation = {
     if (number.length !== 3) throw new Error(ERROR_MESSAGE.not_three_digits);
     if (new Set([...number]).size !== 3) throw new Error(ERROR_MESSAGE.duplicate);
     if (number.includes('0')) throw new Error(ERROR_MESSAGE.out_of_range);
+    
+    return number.split('').map((item) => +item);
   }
 }
 

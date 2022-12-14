@@ -1,9 +1,11 @@
 const BaseballGame = require("./baseballGame");
+const OutputView = require("./OutputView");
 
 class App {
   play() {
+    OutputView.printStartGame();
     const baseballGame = new BaseballGame();
-    baseballGame.startGame();
+    baseballGame.handleUserInput();
   }
 }
 
