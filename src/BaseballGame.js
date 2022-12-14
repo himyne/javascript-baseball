@@ -1,8 +1,12 @@
 const OutputView = require('./OutputView');
 const InputView = require('./InputView');
+const makeComputerNumber = require('./ComputerNumberGenerator');
 
 class BaseballGame {
-  
+  constructor() {
+    this.computerNumber = makeComputerNumber();
+  }
+
   startGame() {
     OutputView.printStartGame();
     this.handleUserInput();
@@ -10,7 +14,7 @@ class BaseballGame {
 
   handleUserInput() {
     InputView.readUserNumber((number) => {
-      console.log(number)
+      
     })
   }
 }
