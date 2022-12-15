@@ -1,6 +1,6 @@
 const { Console } = require('@woowacourse/mission-utils');
 const { INPUT_QUERY } = require('./Constants');
-const catchError = require('./util');
+const { catchError } = require('./util');
 const { checkCarName, checkAttemptNumber } = require('./Validation');
 
 const InputView = {
