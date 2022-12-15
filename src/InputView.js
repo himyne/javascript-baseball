@@ -10,6 +10,12 @@ const InputView = {
       if(!cars) return this.readCarName(readCarNameCallback);
       readCarNameCallback(cars);
     });
+  },
+
+  readAttemptNumber(readAttemptNumberCallback) {
+    Console.readLine(INPUT_QUERY.attempt_number, (number) => {
+      readAttemptNumberCallback(number);
+    })
   }
 };
 
