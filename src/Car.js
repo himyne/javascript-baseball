@@ -27,7 +27,7 @@ class Car {
         this.giveRandomNumberToCar();
         this.makeResult();
       }
-      this.decideWinner(ranking);
+      this.decideWinner();
     });
   }
 
@@ -52,9 +52,9 @@ class Car {
   }
 
   decideWinner() {
-    const ranking = Object.values(this.#carRanking);
-    const carName = Object.keys(this.#carRanking);
-    OutputView.printWinner(winner);
+    const arr = Object.values(this.#carRanking);
+    const winnerNum = Math.max(...arr);
+    OutputView.printWinner(getKeyByValue(this.#carRanking, winnerNum));
   }
 }
 

@@ -16,4 +16,8 @@ const makeRandomNumber = () => {
   return Random.pickNumberInRange(RANGE_NUMBER.start_inclusive, RANGE_NUMBER.end_inclusive);
 };
 
-module.exports = {catchError, makeRandomNumber};
+function getKeyByValue(obj, value) {
+  return Object.keys(obj).filter(key => obj[key] === value);
+}
+
+module.exports = {catchError, makeRandomNumber, getKeyByValue};

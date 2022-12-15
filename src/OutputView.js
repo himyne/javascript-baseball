@@ -12,6 +12,11 @@ const OutputView = {
 
   printResult(carName, carRanking) {
     Console.print(`${carName}: ${OUTPUT.move_symbol.repeat(carRanking)}`);
+  },
+
+  printWinner(winner) {
+    Console.print(`${OUTPUT.winner}${winner.join(',')}`);
+    Console.close();
   }
 };
 
