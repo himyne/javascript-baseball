@@ -1,8 +1,11 @@
+const Car = require("./Car");
 const OutputView = require("./OutputView");
 
 class App {
   play() {
     OutputView.printStartMessage();
+    const car = new Car();
+    car.saveCarInfo();
   }
 }
 
