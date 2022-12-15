@@ -12,4 +12,10 @@ const ERROR = {
   not_number: '시도 횟수는 숫자여야 합니다.'
 };
 
-module.exports = { INPUT_QUERY, ERROR };
+const OUTPUT = {
+  start: '자동차 경주 게임을 시작합니다.',
+  result: '실행 결과',
+  move_symbol: '-',
+}
+
+module.exports = { INPUT_QUERY, ERROR, OUTPUT };

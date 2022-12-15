@@ -1,6 +1,6 @@
 const InputView = require('./InputView');
 const OutputView = require('./OutputView');
-const { makeRandomNumber, getKeyByValue } = require('./util');
+const { makeRandomNumber } = require('./util');
 
 class Car {
   #cars;
@@ -26,6 +26,7 @@ class Car {
       for (let i = 0; i < number; i++) {
         this.giveRandomNumberToCar();
       }
+      this.makeResult();
     });
   }
 
@@ -38,6 +39,15 @@ class Car {
         this.#carRanking[key]++;
       }
     }
+  }
+
+  makeResult() {
+    const ranking = Object.values(this.#carRanking);
+    const carName = Object.keys(this.#carRanking);
+    OutputView.printResultTitle();
+    carName.forEach((car, index) => {
+      OutputView.printResult(car, ranking[index]);
+    });
   }
 }
 
