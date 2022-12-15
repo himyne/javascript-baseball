@@ -8,6 +8,11 @@ const Validation = {
     if (carArray.some((car) => !car)) throw new Error(ERROR.not_name);
     if (new Set([...carArray]).size !== carArray.length) throw new Error(ERROR.duplicate);
     return carArray;
+  },
+
+  checkAttemptNumber(number) {
+    if(isNaN(number)) throw new Error(ERROR.not_number)
+    return Number(number);
   }
 };
 

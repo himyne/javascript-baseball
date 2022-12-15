@@ -1,7 +1,7 @@
 const { Console } = require('@woowacourse/mission-utils');
 const { INPUT_QUERY } = require('./Constants');
 const catchError = require('./util');
-const { checkCarName } = require('./Validation');
+const { checkCarName, checkAttemptNumber } = require('./Validation');
 
 const InputView = {
   readCarName(readCarNameCallback) {
@@ -14,6 +14,8 @@ const InputView = {
 
   readAttemptNumber(readAttemptNumberCallback) {
     Console.readLine(INPUT_QUERY.attempt_number, (number) => {
+      number = catchError(number, checkAttemptNumber)
+      if(!number) return this.readAttemptNumber(readAttemptNumberCallback);
       readAttemptNumberCallback(number);
     })
   }
